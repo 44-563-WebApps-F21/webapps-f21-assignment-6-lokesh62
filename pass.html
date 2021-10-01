@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <title>Responsive page</title>
+    </head>
+
+<body>
+
+<h2>Hidden things by Lokesh Pentyala</h2>
+
+
+<form>
+    <label for = "form1_secretPhrase">Enter the secret phrase </label>
+    <input type ="password" id = "form1_secretPhrase" name = "form1_secretPhrase" min = 8 max = 30 step = 2 value = "Let me in"> <br>
+
+    <label for = "form1_phraseCheck">Enter a phrase</label>
+    <input type = "text" id = "form1_checkPhrase" name = "form1_checkPhrase" autofocus> <br>
+
+    <input type = "button" onclick = "processPhrase()" value = "Check the phrase">
+</form>
+
+
+<p id = "result">Result will be displayed</p>
+
+<script> 
+var correct = 0;
+var wrong = 0;
+function processPhrase()
+{ 
+    
+    console.log("Getting form values")
+    secretPhrase = document.getElementById("form1_secretPhrase").value
+    checkPhrase = document.getElementById("form1_checkPhrase").value 
+    out = document.getElementById("result")
+    if(secretPhrase == checkPhrase)
+    { 
+        correct++; 
+        alert("Access allowed");
+    } 
+    else 
+    {
+        wrong++;
+        alert("Access denied");
+      
+    }
+    out.innerHTML = " correct count: " + correct + " wrong count: " +wrong 
+}
+</script>  
+
+    
+
+</body>
+</html>
