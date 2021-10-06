@@ -64,41 +64,7 @@
 
     }
 
-    function processRadio(){
-
-        var baseValue = document.getElementById("baseValue").value;
-        var exponentValue = document.getElementById("exponentValue").value;
-
-        
-        var mathOperations = document.getElementsByName('mathOperations');
-        var operator="";
-        var mathResult=0;
-
-        for (var i = 0, length = mathOperations.length; i < length; i++) {
-        
-            if (mathOperations[i].checked) {
-
-                operator = mathOperations[i].value;
-                
-                if(operator =="+"){
-                    mathResult = parseFloat(baseValue)+parseFloat(exponentValue);
-                }else if(operator == "-"){
-                    mathResult = baseValue-exponentValue;
-                }else if(operator == "*"){
-                    mathResult = baseValue*exponentValue;
-                }else{
-                    mathResult = baseValue/exponentValue;
-                }
-
-                document.getElementById("mathResult").innerHTML = mathResult;
-
-                break;
-            }
-        }
-
-        
-
-    }
+   
 
 </script>
 
