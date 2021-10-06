@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Computations</title>
+    </head>
+ 
+<body>
+
+<h2>Lokesh Pentyala Computes</h2>
+
+<form>
+    <label for="baseValue">Enter a base</label>
+    <input type ="number" id="baseValue" name="baseValue" value=10> <br>
+
+    <label for="exponentValue">Enter a exponent</label>
+    <input type ="number" id="exponentValue" name="exponentValue" value=2> <br>
+
+    <input type="button" onclick="powers()" value="Compute">
+
+
+<p id="result"></p>
+
+<div>
+    <input type="radio" id="plus" name="mathOperations" onclick="processRadio()" value="+">
+           
+    <label for="plus">plus</label>
+  </div>
+  
+  <div>
+    <input type="radio" id="minus" name="mathOperations" onclick="processRadio()" value="-" checked>
+    <label for="minus">minus</label>
+  </div>
+  
+  <div>
+    <input type="radio" id="times" name="mathOperations" onclick="processRadio()" value="*">
+    <label for="times">times</label>
+  </div>
+
+  <div>
+    <input type="radio" id="divide" name="mathOperations" onclick="processRadio()" value="/">
+    <label for="divide">divide</label>
+  </div>
+
+
+  <p id="mathResult"></p>
+</form>
+
+<script> 
+
+    function powers(){
+
+        var baseValue = document.getElementById("baseValue").value;
+        var exponentValue = document.getElementById("exponentValue").value;
+        var result ="";
+        
+        result = "powers of "+ baseValue+" are: ";
+        
+
+        for (let i = 1; i <= exponentValue; i++) {
+                result = result + Math.pow(baseValue,i)+" ";
+        }
+
+        document.getElementById("result").innerHTML = result;
+
+    }
+
+    function processRadio(){
+
+        var baseValue = document.getElementById("baseValue").value;
+        var exponentValue = document.getElementById("exponentValue").value;
+
+        
+        var mathOperations = document.getElementsByName('mathOperations');
+        var operator="";
+        var mathResult=0;
+
+        for (var i = 0, length = mathOperations.length; i < length; i++) {
+        
+            if (mathOperations[i].checked) {
+
+                operator = mathOperations[i].value;
+                
+                if(operator =="+"){
+                    mathResult = parseFloat(baseValue)+parseFloat(exponentValue);
+                }else if(operator == "-"){
+                    mathResult = baseValue-exponentValue;
+                }else if(operator == "*"){
+                    mathResult = baseValue*exponentValue;
+                }else{
+                    mathResult = baseValue/exponentValue;
+                }
+
+                document.getElementById("mathResult").innerHTML = mathResult;
+
+                break;
+            }
+        }
+
+        
+
+    }
+
+</script>
+
+</body>
+</html> 
