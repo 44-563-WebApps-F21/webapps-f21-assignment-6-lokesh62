@@ -22,6 +22,11 @@
 
 <p id = "result">Result will be displayed</p>
 
+<div>
+    <img src = "eagle.jpg" id="image" style="height: 200px;width: 200px;"></img>
+    <button onclick="newImage()">Click me</button>
+</div>
+
 <script> 
 var correct = 0;
 var wrong = 0;
@@ -45,6 +50,33 @@ function processPhrase()
     }
     out.innerHTML = " correct count: " + correct + " wrong count: " +wrong 
 }
+
+
+function newImage(){
+var usingImage = 1;
+    
+switch(usingImage){
+
+    case 1: 
+        usingImage++;
+        document.getElementById("image").src = "images/eagle.jpg";
+        break;
+    
+    case 2:
+        usingImage++;
+        document.getElementById("image").src = "images/tiger.jpg";
+        break;
+    
+    case 3:
+        usingImage = 1;
+        document.getElementById("image").src = "images/peacock.jpg";
+        break;
+        
+    }
+
+}
+
+
 </script>  
 
     
