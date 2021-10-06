@@ -69,6 +69,17 @@ function orderCar() {
     document.getElementById("result").innerHTML = my_car;
     
 }
+function updateCar(){
+    
+    let property = document.getElementById("property").value;
+    let propertyVal = document.getElementById("propertyVal").value;
+
+    my_car[property]=propertyVal;
+
+    document.getElementById("result").innerHTML = my_car[property];
+
+}
+
 
 
 
