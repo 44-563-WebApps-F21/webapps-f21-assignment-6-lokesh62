@@ -65,8 +65,10 @@ function orderCar() {
     let gps = document.getElementById("gps").checked;  
     
     my_car={'electric':electric,'ac':ac,'gps':gps};
-    
+    my_car = JSON.stringify(my_car);
     document.getElementById("result").innerHTML = my_car;
+    my_car = JSON.parse(my_car);
+    
     
 }
 function updateCar(){
@@ -75,8 +77,12 @@ function updateCar(){
     let propertyVal = document.getElementById("propertyVal").value;
 
     my_car[property]=propertyVal;
+    my_car = JSON.stringify(my_car);
 
-    document.getElementById("result").innerHTML = my_car[property];
+    document.getElementById("result").innerHTML = my_car;
+
+    my_car = JSON.parse(my_car);
+
 
 }
 
